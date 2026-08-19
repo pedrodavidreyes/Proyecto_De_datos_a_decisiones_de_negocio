@@ -63,7 +63,7 @@ Se validaron los tres datasets base (`orders`, `catalog`, `marketing`):
 - Homologación de categorías (por ejemplo, `Electrónica` con y sin acento entre `catalog` y `orders`).
 - Detección de outliers en `orders` mediante boxplot.
 
-<img src="assets/Boxplots.png" alt="Boxplots de revisión de outliers en orders" width="700"/>
+<img src="assets/Boxplots.webp" alt="Boxplots de revisión de outliers en orders" width="700"/>
 
 El boxplot de `cantidad` mostró pedidos con volúmenes anómalos (10,000 y 20,000 unidades en una sola compra), muy por encima del promedio. Se marcaron como **bandera de outliers** para poder analizar el negocio con y sin ellos, en lugar de eliminarlos sin más: esa decisión resultó clave en el paso siguiente.
 
@@ -85,7 +85,7 @@ El boxplot de `cantidad` mostró pedidos con volúmenes anómalos (10,000 y 20,0
 | Inversión en marketing | ≈ $2,872,842.3 | 5.53% |
 | **Utilidad neta** | **$5,971,069.8** | **11.49%** |
 
-<img src="assets/comparacion_de_ingresos_costos_y_utilidad.png" alt="Comparación de ingresos, costos y utilidad" width="500"/>
+<img src="assets/comparacion_de_ingresos_costos_y_utilidad.webp" alt="Comparación de ingresos, costos y utilidad" width="500"/>
 
 RappiPlus **sí es rentable**, pero el margen neto (11.5%) es sensible al costo de producto y al gasto de marketing: casi 6 centavos de cada dólar de ingreso se destinan a adquisición.
 
@@ -97,7 +97,7 @@ RappiPlus **sí es rentable**, pero el margen neto (11.5%) es sensible al costo 
 
 **Inversión y retorno por campaña:**
 
-<img src="assets/inversion_y_ventas_generadas_por_campania.png" alt="Inversión y ventas generadas por campaña" width="700"/>
+<img src="assets/inversion_y_ventas_generadas_por_campania.webp" alt="Inversión y ventas generadas por campaña" width="700"/>
 
 `paid_search_Mexico` fue la campaña con mayor retorno absoluto (~$14.3M en ventas con ~$326K de inversión), seguida por `paid_search_Argentina` y `social_Colombia`. El canal orgánico también aporta un volumen relevante de ventas sin costo de adquisición directo.
 
@@ -109,11 +109,11 @@ RappiPlus **sí es rentable**, pero el margen neto (11.5%) es sensible al costo 
 
 Al comparar costo, monto y utilidad por producto **con y sin outliers**, un solo producto distorsiona por completo la lectura del negocio:
 
-<img src="assets/graficos_de_rendimiento_con_y_sin_outliers.png" alt="Gráficos de rendimiento con y sin outliers" width="800"/>
+<img src="assets/graficos_de_rendimiento_con_y_sin_outliers.webp" alt="Gráficos de rendimiento con y sin outliers" width="800"/>
 
 Incluyendo los outliers, `Laptop-Gaming-16GB` concentra **$40.5M** en costos frente a solo **$3M** de utilidad — un resultado que arrastra la rentabilidad general del catálogo hacia abajo únicamente por un puñado de pedidos.
 
-<img src="assets/utilidades_y_perdidas_de_outliers.png" alt="Utilidad generada por los pedidos outliers" width="700"/>
+<img src="assets/utilidades_y_perdidas_de_outliers.webp" alt="Utilidad generada por los pedidos outliers" width="700"/>
 
 **Anomalías en precio unitario y volumen — producto Laptop-Gaming-16GB:**
 
@@ -135,7 +135,7 @@ Incluyendo los outliers, `Laptop-Gaming-16GB` concentra **$40.5M** en costos fre
 
 Analizado con SQL sobre la tabla `events`, siguiendo el recorrido `first_visit → select_item → add_to_cart → begin_checkout → add_payment_info → purchase`.
 
-<img src="assets/Embudo_general.png" alt="Embudo general de conversión" width="700"/>
+<img src="assets/Embudo_general.webp" alt="Embudo general de conversión" width="700"/>
 
 | Etapa | Conversión acumulada |
 |---|---|
@@ -163,9 +163,9 @@ Analizado con SQL sobre la tabla `events`, siguiendo el recorrido `first_visit �
 
 Analizado con SQL sobre `users` (8,000 registros) y `user_activity` (32,000 registros), construyendo cohortes semanales por mes de registro.
 
-<img src="assets/retencion_acumulada_por_cohorte.png" alt="Retención acumulada por cohorte" width="600"/>
+<img src="assets/retencion_acumulada_por_cohorte.webp" alt="Retención acumulada por cohorte" width="600"/>
 
-<img src="assets/porcentaje_de_retencion_por_pais.png" alt="Porcentaje de retención por país" width="600"/>
+<img src="assets/porcentaje_de_retencion_por_pais.webp" alt="Porcentaje de retención por país" width="600"/>
 
 **Hallazgos principales:**
 
@@ -191,7 +191,7 @@ Analizado con SQL sobre `users` (8,000 registros) y `user_activity` (32,000 regi
 
 **Test estadístico:** prueba Z para dos proporciones · **α = 0.05** (95% de confianza)
 
-<img src="assets/conversiones_por_landingpage.png" alt="Conversiones por variante de checkout" width="600"/>
+<img src="assets/conversiones_por_landingpage.webp" alt="Conversiones por variante de checkout" width="600"/>
 
 | Variante | Conversiones | Tasa de conversión |
 |---|---|---|
@@ -213,32 +213,32 @@ Analizado con SQL sobre `users` (8,000 registros) y `user_activity` (32,000 regi
 
 Con los CSVs limpios del Paso 1 se construyó un dashboard ejecutivo de 5 páginas en Power BI.
 
-<img src="P-BI/1_intro_P-BI.png" alt="Portada del dashboard RappiPlus" width="800"/>
+<img src="P-BI/1_intro_P-BI.webp" alt="Portada del dashboard RappiPlus" width="800"/>
 
 ### Overview Ejecutivo
 KPIs de negocio (ingreso, utilidad, ROAS, ticket promedio), evolución mensual de utilidad e ingresos acumulados YTD/MTD, e ingreso/utilidad por producto.
 
-<img src="P-BI/2_overview.png" alt="Overview Ejecutivo" width="800"/>
+<img src="P-BI/2_overview.webp" alt="Overview Ejecutivo" width="800"/>
 
 ### Drill-through
 Exploración del KPI general hasta el detalle de la anomalía en `Laptop-Gaming-16GB`, con ingreso y utilidad bruta por país.
 
-<img src="P-BI/3_Drill-through.png" alt="Drill-through" width="800"/>
+<img src="P-BI/3_Drill-through.webp" alt="Drill-through" width="800"/>
 
 ### Detalle de producto
 Tabla transaccional filtrable con cada pedido, costo, monto y utilidad.
 
-<img src="P-BI/4_detalle_de_producto.png" alt="Detalle de producto" width="800"/>
+<img src="P-BI/4_detalle_de_producto.webp" alt="Detalle de producto" width="800"/>
 
 ### Funnel
 Embudo de conversión interactivo, filtrable por país, con el detalle de la mayor caída.
 
-<img src="P-BI/5_Funnel.png" alt="Funnel" width="800"/>
+<img src="P-BI/5_Funnel.webp" alt="Funnel" width="800"/>
 
 ### Retención
 Retención acumulada por cohorte, país, tipo de plan y dispositivo, con insights de negocio integrados en el panel lateral.
 
-<img src="P-BI/6_Retencion.png" alt="Retención" width="800"/>
+<img src="P-BI/6_Retencion.webp" alt="Retención" width="800"/>
 
 [↑ Volver al inicio](#proyecto-rappiplus-de-datos-a-decisiones-de-negocio)
 
